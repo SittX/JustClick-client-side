@@ -12,7 +12,9 @@ const Anime = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    const response = await fetch(`http://localhost:3001/anime/search/${input}`);
+    const response = await fetch(
+      `https://justclick-mern.herokuapp.com/anime/search/${input}`
+    );
     const data = await response.json();
     setAnimeShows(data);
     setLoading(false);

@@ -36,7 +36,7 @@ const Movies = () => {
   const nextPage = async (page) => {
     setIsLoading(true);
     const response = await fetch(
-      `http://localhost:3001/search/movie/${input}/${page}`
+      `https://justclick-mern.herokuapp.com/search/movie/${input}/${page}`
     );
     const data = await response.json();
     setResultPosts(data.results);

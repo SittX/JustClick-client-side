@@ -5,7 +5,7 @@ const Input = ({ route }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    fetch(`http://localhost:3001/search/${route}/${input}`)
+    fetch(`https://justclick-mern.herokuapp.com/search/${route}/${input}`)
       .then((response) => response.json())
       .then((data) => console.log(data));
   };
