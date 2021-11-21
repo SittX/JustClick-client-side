@@ -12,7 +12,7 @@ const WatchLater = () => {
       setMovies(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
     };
     getMovies();
-  }, []);
+  }, [favouriteCollection]);
   return (
     <div>
       <h1>watchLater</h1>

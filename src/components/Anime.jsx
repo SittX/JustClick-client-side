@@ -1,5 +1,4 @@
 import { useState } from "react";
-import Input from "./Input";
 import { v4 } from "uuid";
 import { Loading } from "react-loading-dot/lib";
 const Anime = () => {
@@ -34,7 +33,7 @@ const Anime = () => {
             <div className="row" id="grid-items" key={v4()}>
               <div className="col-lg-3">
                 <h4 style={{ textAlign: "center" }}>{anime.title}</h4>
-                <img src={`${anime.image_url}`} className="poster" />
+                <img src={`${anime.image_url}`} alt="" className="poster" />
               </div>
               <div className="col-lg-9">
                 <p style={{ fontSize: "20px" }}>{anime.synopsis}</p>
@@ -54,6 +53,7 @@ const Anime = () => {
                 <a
                   href={`${anime.url}`}
                   target="_blank"
+                  rel="noreferrer"
                   style={{ wordWrap: "break-word" }}
                 >
                   {anime.url}

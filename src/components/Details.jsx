@@ -1,8 +1,7 @@
 import { useLocation } from "react-router";
 import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
 import firestore from "../firebaseConfig";
-import { collection, getDocs, addDoc } from "firebase/firestore";
+import { collection, addDoc } from "firebase/firestore";
 import {
   Container,
   PageBanner,
@@ -21,8 +20,8 @@ const Details = () => {
   const data = location.state;
 
   //add votes to the firestore
-  const collectionRef = collection(firestore, "movie_votes");
-  const [movies, setMovies] = useState([]);
+  // const collectionRef = collection(firestore, "movie_votes");
+  // const [movies, setMovies] = useState([]);
   //movie obj
   // useEffect(() => {
   //   const addMovie = async () => {
@@ -49,6 +48,7 @@ const Details = () => {
   const favouriteCollection = collection(firestore, "favouriteMovies");
   const addWatchLater = async () => {
     const response = await addDoc(favouriteCollection, data);
+    console.log(response);
   };
   return (
     <Container>

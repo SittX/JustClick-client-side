@@ -14,7 +14,7 @@ import {
 const Movies = () => {
   const [pages, setPages] = useState(0);
   const { data, isLoading, setIsLoading } = useFetch(
-    `http://localhost:3001/movie`
+    `https://justclick-mern.herokuapp.com/movie`
   );
 
   //state and funcs for the search movies
@@ -25,7 +25,9 @@ const Movies = () => {
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await fetch(`http://localhost:3001/search/movie/${input}`);
+    const response = await fetch(
+      `https://justclick-mern.herokuapp.com/search/movie/${input}`
+    );
     const data = await response.json();
     const posts = data.results;
     setPages(data.total_pages);
