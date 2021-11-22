@@ -47,13 +47,12 @@ const Details = () => {
 
   //add to watchLater collection
   const favouriteCollection = collection(firestore, "favouriteMovies");
-  const addWatchLater = async () => {
+  const addToFavourite = async () => {
     const response = await addDoc(favouriteCollection, data);
-    console.log(response);
   };
   return (
     <Container>
-      <Link to="/">
+      <Link to="/movies">
         <FaHome></FaHome>
       </Link>
       <PageBanner
@@ -77,7 +76,7 @@ const Details = () => {
             <Rating>Average : {data.vote_average}</Rating>
           </Article>
         </DetailsWrapper>
-        <Button onClick={addWatchLater}>Add to favourite</Button>
+        <Button onClick={addToFavourite}>Add to favourite</Button>
         <Button onClick={handle_votes}>⇧</Button>
         <Button onClick={handle_votes}>⇩</Button>
       </Card>

@@ -64,14 +64,22 @@ export const Button = styled.button`
   position: absolute;
   right: 0;
   border: none;
-  border-radius: 0 15px 15px 0;
   height: 36px;
+  border-radius: 0 10px 10px 0;
   width: 90px;
   font-size: 20px;
   padding: 4px;
+  background-color: rgb(234, 51, 35);
+  color: black;
   &:hover {
     background-color: rgba(0, 0, 0, 0.1);
     color: rgb(222, 23, 98);
+  }
+  @media (max-width: 768px) {
+    border-radius: 0 10px 10px 0;
+    padding: 0;
+    width: 70px;
+    font-size: 18px;
   }
 `;
 export const Search = styled.form`
@@ -83,8 +91,8 @@ export const Search = styled.form`
   width: 618px;
   height: 40px;
   & input {
-    padding: 0 15px 0 25px;
-    border-radius: 15px;
+    padding: 0 15px 0 10px;
+    border-radius: 10px;
     border: none;
     height: 36px;
     width: 100%;
@@ -97,6 +105,7 @@ export const Search = styled.form`
     width: 80%;
     input {
       width: 100%;
+      font-size: 15px;
     }
   }
 `;

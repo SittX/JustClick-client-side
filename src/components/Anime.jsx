@@ -34,6 +34,7 @@ const Anime = () => {
           data.map((show) => {
             return (
               <Link
+                key={v4()}
                 to={{
                   pathname: `/details/anime/${show.title}`,
                   state: { ...show },

@@ -1,4 +1,4 @@
-import "./App.css";
+import GlobalStyles from "./components/styles/Global";
 import Navbar from "./components/Navbar";
 import Welcome from "./components/Welcome";
 import Movies from "./components/Movies";
@@ -15,6 +15,7 @@ const App = () => {
   return (
     <appContext.Provider value={"Hello"}>
       <div className="App">
+        <GlobalStyles />
         <Navbar />
         <Switch>
           <Route exact path="/" component={Welcome} />
