@@ -49,6 +49,7 @@ const Details = () => {
   const favouriteCollection = collection(firestore, "favouriteMovies");
   const addToFavourite = async () => {
     const response = await addDoc(favouriteCollection, data);
+    console.log(response);
   };
   return (
     <Container>

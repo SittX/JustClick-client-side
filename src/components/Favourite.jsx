@@ -19,6 +19,7 @@ const WatchLater = () => {
     console.log(id);
     const movie = await doc(favouriteCollection, id);
     const response = await deleteDoc(movie);
+    console.log(response);
   };
   return (
     <Container>
