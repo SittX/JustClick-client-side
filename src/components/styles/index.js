@@ -15,20 +15,16 @@ export const PostsContainer = styled.div`
   a {
     text-decoration: none;
   }
-  @media (max-width: 768px) {
-    position: relative;
-    left: 8%;
-    grid-template-columns: repeat(2, 200px);
-    grid-row-gap: 20px;
-  }
-  @media (max-width: 468px) {
-    position: relative;
-    left: 0;
-    grid-template-columns: repeat(2, 200px);
-    grid-row-gap: 20px;
+  @media (max-width: 648px) {
+    padding: 10px;
+    margin: 0;
+    grid-template-columns: repeat(2, 180px);
+    grid-row-gap: 25px;
+    grid-column-gap: 10px;
   }
 `;
 export const MoviesContainer = styled(PostsContainer)``;
+export const AnimeContainer = styled(PostsContainer)``;
 export const Post = styled.div`
   img {
     width: 70%;
@@ -61,3 +57,46 @@ export const Post = styled.div`
   }
 `;
 export const Movie = styled(Post)``;
+export const Series = styled(Post)``;
+
+//Searchbar
+export const Button = styled.button`
+  position: absolute;
+  right: 0;
+  border: none;
+  border-radius: 0 15px 15px 0;
+  height: 36px;
+  width: 90px;
+  font-size: 20px;
+  padding: 4px;
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    color: rgb(222, 23, 98);
+  }
+`;
+export const Search = styled.form`
+  position: relative;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  width: 618px;
+  height: 40px;
+  & input {
+    padding: 0 15px 0 25px;
+    border-radius: 15px;
+    border: none;
+    height: 36px;
+    width: 100%;
+    font-size: 20px;
+    &:focus {
+      outline: none;
+    }
+  }
+  @media (max-width: 768px) {
+    width: 80%;
+    input {
+      width: 100%;
+    }
+  }
+`;

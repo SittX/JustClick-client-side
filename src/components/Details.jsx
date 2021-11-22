@@ -15,6 +15,7 @@ import {
   Rating,
   Button,
 } from "./styles/Details.styled";
+import { FaHome } from "react-icons/fa";
 const Details = () => {
   const location = useLocation();
   const data = location.state;
@@ -52,7 +53,9 @@ const Details = () => {
   };
   return (
     <Container>
-      <Link to="/">Home</Link>
+      <Link to="/">
+        <FaHome></FaHome>
+      </Link>
       <PageBanner
         src={`https://image.tmdb.org/t/p/original/${data.backdrop_path}`}
       ></PageBanner>

@@ -4,13 +4,8 @@ import { v4 } from "uuid";
 import { useState } from "react";
 import { Loading } from "react-loading-dot/lib";
 import { Movie, MoviesContainer } from "./styles";
-import {
-  Container,
-  PageBanner,
-  MoviesWrapper,
-  Form,
-  Button,
-} from "./styles/Movies.styled";
+import { Button, Search } from "./styles";
+import { Container, PageBanner, MoviesWrapper } from "./styles/Movies.styled";
 const Movies = () => {
   const [pages, setPages] = useState(0);
   const { data, isLoading, setIsLoading } = useFetch(
@@ -67,7 +62,7 @@ const Movies = () => {
         ></PageBanner>
       )}
 
-      <Form onSubmit={handleSubmit} className="input-form">
+      <Search onSubmit={handleSubmit}>
         <input
           type="text"
           name="title"
@@ -76,7 +71,7 @@ const Movies = () => {
           placeholder="Search..."
         />
         <Button type="submit">Search</Button>
-      </Form>
+      </Search>
 
       {resultPosts == null ? (
         <MoviesWrapper>
