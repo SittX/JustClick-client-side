@@ -11,13 +11,17 @@ import {
   Span,
   Button,
 } from "./styles/Welcome.styled";
-
+import { useDispatch, useSelector } from "react-redux";
+import fetchTrending from "../redux/actions/fetchTrending";
 const Welcome = () => {
   const [page, setPage] = useState(1);
-  const { data, isLoading } = useFetch(
-    `https://justclick-mern.herokuapp.com/getTrending/${page}`
-  );
-
+  const dispatch = useDispatch();
+  const state = useSelector((state) => state);
+  useEffect(() => {
+    dispatch(
+      fetchTrending(`https://justclick-mern.herokuapp.com/getTrending/${page}`)
+    );
+  }, [page]);
   return (
     <Container>
       <IntroBg></IntroBg>
@@ -39,11 +43,11 @@ const Welcome = () => {
 
       <TrendingNow>Trending now</TrendingNow>
       <PostsContainer>
-        {isLoading ? (
+        {state.loading ? (
           <Loading />
         ) : (
-          data !== "" &&
-          data.results.map((post) => {
+          state.trending &&
+          state.trending.results.map((post) => {
             return (
               <Link
                 key={v4()}
